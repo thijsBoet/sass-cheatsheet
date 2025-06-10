@@ -1,0 +1,52 @@
+// Import
+@import 'reset'
+
+// Variables
+$primary-color: #3498db
+$secondary-color: #2ecc71
+$font-size: 16px
+
+// Nesting
+font 
+    size: $font-size
+    family: Arial, sans-serif
+    weight: bold
+
+nav 
+    ul
+        list-style: none
+        padding: 0
+        margin: 0
+    li
+        display: inline-block
+        margin-right: 20px
+
+// mixins let you define reusable styles
+@mixin button-styles
+    background-color: $primary-color
+    color: white
+    padding: 10px 20px
+    border: none
+    border-radius: 5px
+    cursor: pointer
+// Using the mixin
+.button
+    @include button-styles
+    &:hover
+        background-color: darken($primary-color, 10%)
+
+// mixins can also take arguments
+@mixin card-styles($bg-color, $text-color)
+    background-color: $bg-color
+    color: $text-color
+    padding: 20px
+    border-radius: 10px
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1)
+// Using the mixin with arguments
+.card
+    @include card-styles($secondary-color, white)
+    h2
+        margin-top: 0
+    p
+        margin-bottom: 0
+// Media queries for responsive design
