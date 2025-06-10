@@ -21,7 +21,7 @@ nav
         display: inline-block
         margin-right: 20px
 
-// mixins let you define reusable styles
+// @mixins let you define reusable styles
 @mixin button-styles
     background-color: $primary-color
     color: white
@@ -35,7 +35,7 @@ nav
     &:hover
         background-color: darken($primary-color, 10%)
 
-// mixins can also take arguments
+// @mixins can also take arguments
 @mixin card-styles($bg-color, $text-color)
     background-color: $bg-color
     color: $text-color
@@ -49,4 +49,27 @@ nav
         margin-top: 0
     p
         margin-bottom: 0
-// Media queries for responsive design
+
+// @extend directive lets you share a set of CSS properties from one selector to another.
+.button-secondary
+    @extend .button
+    background-color: $secondary-color
+    &:hover
+        background-color: darken($secondary-color, 10%)
+
+// Sass Functions allow you to create reusable pieces of code that return a value.
+@function calculate-rem($px-value)
+    @return $px-value / 16 * 1rem
+// Using the function
+body
+    font-size: calculate-rem($font-size)
+    color: $primary-color
+// Media Queries
+@media (max-width: 600px)
+    body
+        font-size: calculate-rem(14px)
+    nav
+        ul
+            li
+                display: block
+                margin-bottom: 10px

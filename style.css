@@ -23,7 +23,7 @@ nav li {
   margin-right: 20px;
 }
 
-.button {
+.button, .button-secondary {
   background-color: #3498db;
   color: white;
   padding: 10px 20px;
@@ -31,7 +31,7 @@ nav li {
   border-radius: 5px;
   cursor: pointer;
 }
-.button:hover {
+.button:hover, .button-secondary:hover {
   background-color: #217dbb;
 }
 
@@ -47,4 +47,11 @@ nav li {
 }
 .card p {
   margin-bottom: 0;
+}
+
+.button-secondary {
+  background-color: #2ecc71;
+}
+.button-secondary:hover {
+  background-color: #25a25a;
 }/*# sourceMappingURL=style.css.map */
